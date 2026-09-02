@@ -42,9 +42,13 @@ export default function Navbar() {
                   <a
                     key={link.href}
                     href={link.href}
-                    className="border-b-2 border-transparent pb-1 text-sm text-white/70
-                    transition-colors hover:border-brand hover:text-brand"
-                >
+                    className="relative inline-block pb-1 text-sm text-white/70
+                        transition-colors duration-300 hover:text-brand
+                        after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full
+                        after:origin-left after:scale-x-0 after:bg-brand
+                        after:transition-transform after:duration-500 after:ease-out
+                        hover:after:scale-x-100"
+                 >
                 {link.label}                    
                 </a>  
                 ))}

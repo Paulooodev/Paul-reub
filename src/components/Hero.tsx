@@ -46,12 +46,12 @@ export default function Hero() {
              transition={{ duration: 0.7, delay: 0.1, ease: EASE }}
              className="mb-7 flex items-center gap-3.5"
           >
-            <motion.span
+            {/* <motion.span
                 initial={{ scaleX: 0 }}
                 animate={{ scaleX: 1 }}
                 transition={{ duration: 0.7, delay: 0.1, ease: EASE }}
                 className="block h-1 w-11 origin-left bg-brand"
-            />
+            /> */}
             <span className="font-mono text-[12.5px] uppercase tracking-[0.28em] text-brand-light">
                 Civil Engineering &amp; Heavy Construction
             </span>
@@ -74,9 +74,13 @@ export default function Hero() {
           transition={{ duration: 0.85, delay: 0.21, ease: EASE }}
           className="mt-6 max-w-[56ch] text-[clamp(16px,1.35vw,19px)] leading-[1.6] text-white/80"
         >
-          For nearly three decades, Paulreub has delivered the roads, bridges,
-          and foundations that move Nigeria forward — on time, on grade, and
-          to the tolerance of a single millimetre.
+          For nearly two decades, Paulreub has been working towards
+          establishing a reputation as a one stop shop for
+          Engineering Construction activities.
+          Through a network of Industry Professionals like
+          Architects, Engineers, & Quantity Surveyors, we have
+          been able to offer quality services to our clients using
+          modern engineering techniques and tools.
         </motion.p>
 
         {/* The two CTAs — delay 330ms */}
