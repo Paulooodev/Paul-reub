@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import StatsBar from "@/components/StatsBar";
 import Ethos from "@/components/Ethos";
 import Capabilities from "@/components/Capabilities";
+import ProjectsCarousel from "@/components/ProjectsCarousel";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <StatsBar />
       <Ethos />
       <Capabilities />
+      <ProjectsCarousel />
       <main className="flex min-h-[calc(100vh-72px)] items-center justify-center bg-night">
         <h1 className="font-mono text-lg uppercase tracking-widest text-brand">
           Paulreub — navbar framed ✅

@@ -57,6 +57,7 @@ function StackCard({ capability, index, total, scrollYProgress}:{
          {/* Card header: number, title, tag + yellow edge */} 
          <div className="relative flex h-[68px] items-center justify-between border-b border-line px-7">
             {/* The yellow left edge */}
+            <span className="absolute inset-y-0 left-0 w-[5px] bg-brand"></span>
             <div className="flex items-baseline gap-4.5">
                <span className="font-mono text-sm text-brand-dark">{capability.num}</span>
                <span className="text-xl font-bold text-ink">{capability.title}</span> 
