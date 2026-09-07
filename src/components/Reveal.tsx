@@ -9,7 +9,8 @@ const variants: Variants = {
 
 export default function Reveal({
   children,
-  delay = 0,    
+  delay = 0, 
+  className   
 }: {
   children: ReactNode;
   delay?: number;    
@@ -19,6 +20,7 @@ export default function Reveal({
       variants={variants}
       initial="hidden"
       whileInView="visible"
+      className={className} 
       viewport={{ once: true, margin: "0px 0px -8% 0px" }}
       transition={{ duration: 0.8, delay, ease: [0.2, 0.7, 0.2, 1] }}
     >
