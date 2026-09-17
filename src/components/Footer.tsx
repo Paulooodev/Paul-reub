@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Reveal from "./Reveal";
+import Link from "next/link";
 
 export default function Footer() {
     return (
@@ -7,18 +8,18 @@ export default function Footer() {
             <div className="mx-auto max-w-[1280px] px-6 pt-25 md:px-10">
                {/* TOP: headline + bid form */} 
                <div className="grid gap-12 border-b border-white/10 pb-18 md:grid-cols-2 md:gap-16">
-                    <Reveal>
+                    <Reveal className="flex flex-wrap items-end justify-between gap-10 border-b border-white/10 pb-18">
                        <h2 className="m-0 max-w-[16ch] text-[clamp(36px,5.4vw,80px)] leading-[0.98] font-extrabold tracking-[-0.03em] text-brand">
                           Let&apos;s build something that lasts.
                         </h2>
-                        <p className="mt-6 max-w-[48ch] leading-[1.65] text-white/60">
-                            Tell us about your project — a member of our estimating team
-                            responds within two business days.
-                        </p> 
+                        <Link
+                           href="/request-bid" 
+                           className="rounded-md bg-brand px-9 py-5 text-base font-bold whitespace-nowrap text-ink
+                                      transition-colors hover:bg-brand-dark"
+                       >
+                            Request a bid
+                        </Link> 
                     </Reveal>
-                    {/* <Reveal delay={0.15}>
-                        <BidForm />
-                    </Reveal> */}
                </div>
 
             {/*  MIDDLE: link columns  */} 
@@ -58,7 +59,7 @@ export default function Footer() {
                     </span>
 
                     <FooterLink href="tel:+2348123456789">+234 812 345 6789</FooterLink>
-                    <FooterLink href="mailto:bids@paulreub.ng">bids@paulreub.com</FooterLink>    
+                    <FooterLink href="mailto:info@paulreub.ng">info@paulreub.com</FooterLink>    
                 </div>
               </div>  
             </div>

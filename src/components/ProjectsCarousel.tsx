@@ -51,7 +51,7 @@ export default function ProjectsCarousel() {
                    Selected Projects 
                  </div>
                    <h2 className="m-0 text-[clamp(30px,4vw,52px)] leading-[1.04] font-extrabold tracking-[-0.025em] text-ink">
-                      Sites we&apos;ve put in the ground.
+                      Major sites we&apos;ve put in the ground.
                     </h2>
                 </div> 
 

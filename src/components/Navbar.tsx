@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 
 const LINKS = [
@@ -24,7 +25,7 @@ export default function Navbar() {
      >
        <nav className="mx-auto flex h-[72px] max-w-[1280px] items-center justify-between gap-8 px-6 md:px-10">
         {/* Logo — links back to top */}
-           <a href="#" className="flex items-center" aria-label="Paulreub home">
+           <Link href="/" className="flex items-center" aria-label="Paulreub home">
             <Image
               src="/logo.png"
               alt="Paulreub logo"
@@ -33,7 +34,7 @@ export default function Navbar() {
               priority
               className="h-18 w-auto"
             />
-           </a>
+           </Link>
 
            {/* Desktop links + CTA (hidden on phones) */}
            <div className="hidden items-center gap-9 md:flex">
@@ -53,13 +54,13 @@ export default function Navbar() {
                 </a>  
                 ))}
              </div>
-                <a
-                   href="#footer"
+                <Link
+                   href="/request-bid"
                    className="rounded-md bg-brand px-5 py-3 text-sm font-bold text-ink
                     transition-colors hover:bg-brand-dark"
                 >
                 Request a bid
-            </a>
+            </Link>
            </div>
 
         {/* Mobile hamburger */}   
@@ -94,13 +95,13 @@ export default function Navbar() {
                     {link.label}
                 </a>
                ))}
-                <a
-                  href="#footer"
+                <Link
+                  href="/request-bid"
                   onClick={() => setOpen(false)}
                   className="mt-2 rounded-md bg-brand px-3 py-3 text-center text-sm font-bold text-ink"
                 >
                 Request a bid
-              </a>
+              </Link>
             </div>
           </motion.div>  
         )}

@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import Reveal from "./Reveal";
+import CapabilityCarousel from "./CapabilityCarousel";
 import { motion, useScroll, useTransform, type MotionValue } from "framer-motion";
 
 const CAPABILITIES = [
@@ -11,7 +12,7 @@ const CAPABILITIES = [
         tag: "Design · Planning · Supervision",
         desc: "From concept through site supervision; structural, civil, and building services engineered so the drawings hold up on the ground.",
         chips: ["Structural & civil design", "Feasibility & planning", "Site supervision"],
-        photo: "Engineers reviewing drawings on a building site",
+        images: [],
     },
     {
         num: "02",
@@ -19,7 +20,16 @@ const CAPABILITIES = [
         tag: "Buildings · Roads · Infrastructure",
         desc: "Building works and civil construction delivered as one contractor; foundations, structures, and the roads and services that serve them.",
         chips: ["Building construction", "Civil works", "Project execution"],
-        photo: "Building frame and civil works under construction",
+        images: [
+          "/capabilities/building-civil-01.jpg",
+          "/capabilities/building-civil-02.jpg",
+          "/capabilities/building-civil-03.jpg",
+          "/capabilities/building-civil-04.jpg",
+          "/capabilities/building-civil-05.jpg",
+          "/capabilities/building-civil-06.jpg",
+          "/capabilities/building-civil-07.jpg",
+          "/capabilities/building-civil-08.jpg",
+        ],
    },
    {
         num: "03",
@@ -27,7 +37,7 @@ const CAPABILITIES = [
         tag: "Residential · Commercial · Mixed-use",
         desc: "Land into finished assets; housing, commercial, and mixed-use schemes structured, built, and brought to market.",
         chips: ["Residential & apartments", "Commercial & mixed-use", "Land & joint ventures"],
-        photo: "Completed residential or mixed-use development",
+        images: [],
    },
 ];
 
@@ -68,7 +78,7 @@ function StackCard({ capability, index, total, scrollYProgress}:{
         {/* Card body: text + image column (stacks on desktop) */}
         <div className="grid min-h-[400px] md:grid-cols-[1.1fr_1fr]">
             {/* Text column */}
-          <div className="flex flex-col justify-center px-8 py-10">
+          <div className="flex flex-col justify-center px-8 py-10 md:px-8 md:py-10">
             <p className="m-0 text-[clamp(18px,1.7vw,24px)] leading-[1.4] font-medium text-ink">
                {capability.desc} 
             </p>
@@ -85,7 +95,14 @@ function StackCard({ capability, index, total, scrollYProgress}:{
           </div>  
 
           {/* Image column — placeholder until real photos arrive. */}
-          <div className="relative hidden min-h-[300px] bg-paper-soft md:block">
+          <div className="relative order-2 h-[240px] bg-paper-soft md:order-1 md:h-auto md:min-h-[300px]">
+            {capability.images.length > 0 ? (
+              <CapabilityCarousel
+                images={capability.images}
+                alt={`${capability.title} - Paulreub project work`}
+              />
+            ) : (
+              <>
             <div    
                 className="absolute inset-0"
                 style={{
@@ -95,8 +112,10 @@ function StackCard({ capability, index, total, scrollYProgress}:{
                 }}
             />
             <span className="absolute inset-0 flex items-center justify-center px-8 text-center font-mono text-xs uppercase tracking-[0.14em] text-muted">
-               {capability.photo} 
+              {capability.tag}
             </span>
+            </>
+          )}
           </div>
         </div>
         </motion.article>

@@ -6,7 +6,7 @@ import { animate, useInView } from "framer-motion";
 const STATS = [
   { value: 15,    suffix: "+",    label: "Years in operation" },
   { value: 100,  suffix: "+",    label: "Projects delivered" },
-  { value: 300,   prefix: "₦", suffix: "M", label: "Value put in place" },
+  { value: 2,   prefix: "₦", suffix: "B+", label: "Value put in place" },
   { value: 4.2,   suffix: "M",    label: "Safe man-hours logged" },
 ];
 
