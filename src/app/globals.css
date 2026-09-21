@@ -20,5 +20,9 @@
   --font-mono: var(--font-space-mono);
 }
 
+section[id], footer[id] {
+  scroll-margin-top: 84px;
+}
+
 ::selection { background: #B4B804; color: #1A1A1A; }
 html { scroll-behavior: smooth; }

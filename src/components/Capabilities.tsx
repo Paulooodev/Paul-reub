@@ -12,7 +12,14 @@ const CAPABILITIES = [
         tag: "Design · Planning · Supervision",
         desc: "From concept through site supervision; structural, civil, and building services engineered so the drawings hold up on the ground.",
         chips: ["Structural & civil design", "Feasibility & planning", "Site supervision"],
-        images: [],
+        images: [
+          "/capabilities/Engineers_photo1.JPG",
+          "/capabilities/Engineers_photo2.JPG",
+          "/capabilities/Engineers_photo3.JPG",
+          "/capabilities/Engineers_photo4.JPG",
+          "/capabilities/Engineers_photo5.JPG",
+          "/capabilities/Engineers_photo6.JPG",
+        ],
     },
     {
         num: "02",

@@ -83,8 +83,8 @@ export default function CapabilityCarousel({
             <>
               {/* Side arrows */}
               <button
-                 onClick={goPrev}
-                 aria-label="Previous image"
+                 onClick={goNext}
+                 aria-label="Next image"
                  className="absolute top-1/2 right-3 flex h-9 w-9 -translate-y-1/2 items-center
                        justify-center rounded-full border border-white/20 bg-night/50
                        text-sm text-paper backdrop-blur-[4px] transition-colors
@@ -93,8 +93,8 @@ export default function CapabilityCarousel({
                 <ArrowRight strokeWidth={1} size={16} />
               </button> 
               <button
-                 onClick={goNext}
-                 aria-label="Next image"
+                 onClick={goPrev}
+                 aria-label="Previous image"
                  className="absolute top-1/2 left-3 flex h-9 w-9 -translate-y-1/2 items-center
                        justify-center rounded-full border border-white/20 bg-night/50
                        text-sm text-paper backdrop-blur-[4px] transition-colors

@@ -6,11 +6,11 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 
 const LINKS = [
-  { label: "Capabilities", href: "#capabilities" },
-  { label: "Projects",     href: "#projects" },
-  { label: "Leadership",   href: "#leadership" },
-  { label: "Safety",       href: "#ethos" },
-  { label: "Company",      href: "#footer" },
+  { label: "Capabilities", href: "/#capabilities" },
+  { label: "Projects",     href: "/#projects" },
+  // { label: "Leadership",   href: "/#leadership" },
+  { label: "Safety",       href: "/#ethos" },
+  { label: "Company",      href: "/#footer" },
 ];
 
 export default function Navbar() {
@@ -89,7 +89,16 @@ export default function Navbar() {
                 <a
                   key={link.href}
                   href={link.href}
-                  onClick={() => setOpen(false)}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setOpen(false);
+                    const hash = link.href.split("#")[1];
+                    setTimeout(() => {
+                      document  
+                        .getElementById(hash)
+                        ?.scrollIntoView({ behavior: "smooth"})
+                    }, 400)
+                  }}
                   className="rounded-md px-3 py-3 text-sm text-white/70 hover:text-brand"
                 >
                     {link.label}
