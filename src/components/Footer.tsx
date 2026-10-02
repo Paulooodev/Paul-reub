@@ -53,12 +53,12 @@ export default function Footer() {
                 <FooterHeading>Contact</FooterHeading>
                 <div className="flex flex-col gap-3 text-sm text-white/60">
                    <span>
-                       1, Kadiri Street
+                       4, Kadiri Street off Ajayi road
                        <br />
                         Ogba, Lagos
                     </span>
 
-                    <FooterLink href="tel:+2348123456789">+234 812 345 6789</FooterLink>
+                    <FooterLink href="tel:+23481643700538">+234 816 437 0538</FooterLink>
                     <FooterLink href="mailto:info@paulreub.ng">info@paulreub.com</FooterLink>    
                 </div>
               </div>  
@@ -69,9 +69,9 @@ export default function Footer() {
                  © 2008–2026 Paulreub · All rights reserved       
                </span>
                <div className="flex gap-6.5">
-                  <FooterLink href="#" small>Privacy</FooterLink>
-                  <FooterLink href="#" small>Terms</FooterLink>
-                  <FooterLink href="#" small>Prequalification</FooterLink>
+                  <FooterLink href="/privacy" small>Privacy</FooterLink>
+                  <FooterLink href="/terms" small>Terms</FooterLink>
+                  <FooterLink href="/prequalification" small>Prequalification</FooterLink>
                </div>
             </div>
             </div>
@@ -102,11 +102,11 @@ function FooterLink({
     small?: boolean;
 }){
     return (
-    <a
+    <Link
       href={href}
       className={`text-white/60 transition-colors hover:text-brand ${small ? "text-[12.5px]" : "text-sm"}`}
     >
       {children}
-    </a> 
+    </Link> 
     )
 }

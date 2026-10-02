@@ -25,4 +25,4 @@ section[id], footer[id] {
 }
 
 ::selection { background: #B4B804; color: #1A1A1A; }
-html { scroll-behavior: smooth; }
+/* html { scroll-behavior: smooth; } */
