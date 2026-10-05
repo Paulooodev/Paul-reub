@@ -41,10 +41,10 @@ export default function Footer() {
                 <div>
                     <FooterHeading>Company</FooterHeading>
                     <FooterColumn>
-                        <FooterLink href="#ethos">Safety</FooterLink>
-                        <FooterLink href="#projects">Projects</FooterLink>
-                        <FooterLink href="#">Careers</FooterLink>
-                        <FooterLink href="#leadership">Leadership</FooterLink>
+                        <FooterLink href="/#ethos">Safety</FooterLink>
+                        <FooterLink href="/#projects">Projects</FooterLink>
+                        <FooterLink href="/#">Careers</FooterLink>
+                        {/* <FooterLink href="/#leadership">Leadership</FooterLink> */}
                     </FooterColumn>
                 </div>  
 

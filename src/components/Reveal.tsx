@@ -10,10 +10,11 @@ const variants: Variants = {
 export default function Reveal({
   children,
   delay = 0, 
-  className   
+  className,  
 }: {
   children: ReactNode;
-  delay?: number;    
+  delay?: number;  
+  className?: string;  
 }) {
     return (
     <motion.div

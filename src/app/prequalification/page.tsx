@@ -20,7 +20,7 @@ export default function PrequalificationPage(){
             <p className="m-0">
                To request the full dossier, contact{" "} 
                <a
-                  href="mailto:bids@paulreub.com"
+                  href="mailto:info@paulreub.com"
                   className="text-brand-dark underline decoration-brand/50 underline-offset-4 hover:text-brand"
                 >
                  info@paulreub.com
