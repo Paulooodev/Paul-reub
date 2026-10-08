@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import Reveal from "./Reveal";
 import CapabilityCarousel from "./CapabilityCarousel";
 import { motion, useScroll, useTransform, type MotionValue } from "framer-motion";
@@ -48,11 +48,12 @@ const CAPABILITIES = [
    },
 ];
 
-function StackCard({ capability, index, total, scrollYProgress}:{
+function StackCard({ capability, index, total, scrollYProgress, stack}:{
     capability: (typeof CAPABILITIES)[number];
     index: number;
     total: number;
     scrollYProgress: MotionValue<number>;
+    stack: boolean;
 }) {
     const start = index / total;
     const end = (index + 1) / total;
@@ -63,13 +64,13 @@ function StackCard({ capability, index, total, scrollYProgress}:{
 
     return (
         <motion.article
-            style={{
+            style={stack ? {
                 scale,
                 filter,
                 transformOrigin: "top center",
                 top: 96 + index * 68
-            }}
-            className="sticky mb-6.5 overflow-hidden rounded-[10px] border border-line bg-paper shadow-[0_-1px_0_#E5E5E5,0_26px_60px_-34px_rgba(0,0,0,0.4)]"
+            } : undefined }
+            className={`${stack ? "sticky" : ""} mb-6.5 overflow-hidden rounded-[10px] border border-line bg-paper shadow-[0_-1px_0_#E5E5E5,0_26px_60px_-34px_rgba(0,0,0,0.4)]`}
         >
          {/* Card header: number, title, tag + yellow edge */} 
          <div className="relative flex h-[68px] items-center justify-between border-b border-line px-7">
@@ -82,10 +83,10 @@ function StackCard({ capability, index, total, scrollYProgress}:{
             <span className="hidden font-mono text-[11px] uppercase tracking-[0.14em] text-muted sm:block">{capability.tag}</span>
         </div>  
 
-        {/* Card body: text + image column (stacks on desktop) */}
-        <div className="grid min-h-[400px] md:grid-cols-[1.1fr_1fr]">
+        {/* Card body: text + image column (stacks on mobile, side by side on desktop) */}
+        <div className="grid md:grid-cols-[1.1fr_1fr]">
             {/* Text column */}
-          <div className="flex flex-col justify-center px-8 py-10 md:px-8 md:py-10">
+          <div className="flex flex-col justify-center px-6 py-8 md:px-8 md:py-10">
             <p className="m-0 text-[clamp(18px,1.7vw,24px)] leading-[1.4] font-medium text-ink">
                {capability.desc} 
             </p>
@@ -136,6 +137,16 @@ export default function Capabilities(){
        offset: ["start start", "end end"], 
     });
 
+    const [stack, setStack] = useState(false);
+
+    useEffect(() => {
+      const mq = window.matchMedia("(min-width: 768px)");
+      const update = () => setStack(mq.matches);
+      update();
+      mq.addEventListener("change", update);
+      return () => mq.removeEventListener("change", update)
+    }, [])
+
     return (
         <section id="capabilities" className="bg-paper">
           <div className="mx-auto mb-3 max-w-[1280px] px-6 pt-26 md:px-10">
@@ -164,6 +175,7 @@ export default function Capabilities(){
                   index={i}
                   total={CAPABILITIES.length}
                   scrollYProgress={scrollYProgress}
+                  stack={stack}
                 />
              ))}
             </div> 
