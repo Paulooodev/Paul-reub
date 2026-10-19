@@ -16,7 +16,7 @@ const spaceMono = Space_Mono({
 });
 
 export const metadata: Metadata = {
-  // metadataBase: new URL("https://paulreub.com"),
+  metadataBase: new URL("https://paulreub.com"),
   title: "Paulreub — Civil Engineering & Heavy Construction",
   description:
     "Heavy civil and construction, self-performed. Building Nigeria's backbone.",
