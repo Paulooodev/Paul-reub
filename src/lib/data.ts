@@ -8,6 +8,46 @@ export interface Project {
   scope: string; // scope (hover stat)
 }
 
+export interface Leader {
+  name: string;
+  role: string;
+  bio: string;
+  image: string;
+}
+
+export const leaders: Leader[] = [
+  { 
+    name: "Engr. Opeoluwa Oloyede", 
+    role: "Group Managing Director",    
+    bio: "HND · PGD · M.Eng · MNSE. Structures and design authority across every discipline.",                          
+    image: "/leadership/Ope.JPG"
+  },
+  {
+    name: "Mr. A. O. Ogundalu",
+    role: "Executive Director",
+    bio: "BSc · MBA · PhD · MNSE. Leads the firm across consulting, construction, and development.",
+    image: "",
+  },
+  {
+    name: "Mr. O. N. Hotonu",
+    role: "Director, Structures",
+    bio: "BSc · MSc · FNSE · FNIstructE · Mni. Structural authority on the work the firm designs and builds.",
+    image: "",
+  },
+  {
+    name: "Mr. A. A. Fari",
+    role: "Director, Quantity Surveying",
+    bio: "BSc · MSc · MNIQS. Cost, measurement, and commercial control from estimate to final account.",
+    image: "",
+  },
+  {
+    name: "Mr. Gbenga Kehinde",
+    role: "Director, Architecture",
+    bio: "BSc · MSc (Arch). Residential, commercial, and mixed-use design from brief to built form.",
+    image: "",
+  },
+]
+
 export const projects: Project[] = [
   {
     id: "proj-ikoyi-sanctuary",

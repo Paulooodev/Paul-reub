@@ -4,6 +4,7 @@ import StatsBar from "@/components/StatsBar";
 import Ethos from "@/components/Ethos";
 import Capabilities from "@/components/Capabilities";
 import ProjectsCarousel from "@/components/ProjectsCarousel";
+import Leadership from "@/components/Leadership";
 import Footer from "@/components/Footer";
 
 
@@ -17,6 +18,7 @@ export default function Home() {
       <Ethos />
       <Capabilities />
       <ProjectsCarousel />
+      <Leadership />
       <Footer />
       </main>
     </>

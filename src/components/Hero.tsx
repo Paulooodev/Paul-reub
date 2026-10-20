@@ -91,7 +91,7 @@ export default function Hero() {
           className="mt-10 flex flex-wrap gap-3.5"
         >
           <a
-            href="#footer"
+            href="/request-bid"
             className="rounded-md bg-brand px-8 py-4 text-[15px] font-bold text-ink
                        transition-colors hover:bg-brand-dark"
           >
